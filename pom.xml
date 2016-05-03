@@ -5,8 +5,7 @@
     <groupId>org.nameapi.ontology</groupId>
     <artifactId>nameapi-ontology5</artifactId>
     <name>nameapi-ontology5</name>
-    <!--<version>5.1-SNAPSHOT</version>-->
-    <version>5.0.1</version>
+    <version>5.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <url>http://www.nameapi.org</url>
