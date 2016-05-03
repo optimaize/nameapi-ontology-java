@@ -5,7 +5,7 @@
     <groupId>org.nameapi.ontology</groupId>
     <artifactId>nameapi-ontology5</artifactId>
     <name>nameapi-ontology5</name>
-    <version>5.0.2</version>
+    <version>5.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <url>http://www.nameapi.org</url>
@@ -44,7 +44,7 @@
         <connection>scm:git:git://github.com/optimaize/nameapi-ontology-java.git</connection>
         <developerConnection>scm:git:git@github.com:optimaize/nameapi-ontology-java.git</developerConnection>
         <url>http://github.com/optimaize/nameapi-ontology-java</url>
-        <tag>nameapi-ontology5-5.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
