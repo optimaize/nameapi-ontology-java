@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+Contains domain classes for remote method calls to the NameAPI Servers.
+
+
+<h1>What is it?</h1>
+This software contains the domain classes (entities and their relations) that are used in remote method
+calls (such as soap web services) to transfer information from the client application to the server
+(onoserver application) and back. It is the common vocabulary.
+The java web services use these on the server-side, and thus the java client uses the same.
+
+<h2>Definition of the term "ontology"</h2>
+An ontology is a formal specification of a shared conceptualization.
+For further information see http://en.wikipedia.org/wiki/Ontology and http://semanticweb.org/wiki/Ontology
+
+
+
+<h1>How do I use it?</h1>
+Example code:
+<pre><code>
+Person person = new SimpleNaturalPersonBuilder(
+    new PersonNameBuilder().add(givenName("John")).add(surname("Doe")).build()
+    ).addTitle("Dr.")
+    .setGender(StoragePersonGender.MALE)
+    .setAgeInfo(new BirthYear(1950))
+    .addAddressForAll(new StandardAddressBuilder()
+        .setPostalCode("90210")
+        .setPlaceName("Beverly Hills")
+        .setStreetInfo(new StreetNameAndNumber("Hill road", "512"))
+        .setCountry("US")
+    .build())
+.build();
+</code></pre>
+
+<h2>Use Builders</h2>
+Instead of constructing objects manually with complicated constructors where fields may be <code>null</code>,
+check if there is a builder class available. The constructor of the class to build should say so.
+Note that the <code>build()</code> method usually throws IllegalStateException to prevent the creation of
+empty objects.
+
+
+<h2>Multiple interface implementations</h2>
+The developer is sometimes presented with multiple choices; multiple implementations exist for a general interface.
+An example is the InputAddress with the SingleStringAddress and the StructuredAddress implementations.
+
+
+<h2>Null and Guava Optional</h2>
+This project avoids null, and uses the Optional from the Guava library instead.<br/>
+See http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/base/Optional.html
+
+<h2>Exceptions and their handling</h2>
+The concept of this library is to throw exceptions in response to developer mistakes, but not as a result
+of bad data.<br/>
+Example: <code>new BirthDate("1986", "0", "31")</code> throws an IllegalArgumentException because the
+javadoc clearly specifies that the month must be 1-12.<br/>
+However, <code>new BirthDate("1986", "2", "31")</code> does not throw even though the date is invalid.
+The BirthDate object is a POJO and doesn't have that much logic built in; it is the task of a validation
+service to report bad data on that level.<br/>
+Other exceptions to expect in response to programming errors are IllegalStateExceptions, for example when
+calling the same setter twice in a builder class.<br/>
+It is possible that exceptions thrown by this library occur for the first time in production. That's the
+case when such a situation did not occur while testing. Hence the developer should always consider the
+fact that this library may throw a RuntimeException.
+
+
+<h2>Null and empty values</h2>
+Whether <code>null</code> values are permitted is documented and enforced using the @NotNull and
+@Nullable annotations. Passing in <code>null</code> as a parameter annotated with @NotNull causes
+an IllegalArgumentException.
+For further information see http://www.jetbrains.com/idea/documentation/howto.html<br/>
+Whether empty String values are permitted depends on a case by case basis, and should be documented.
+Passing in an empty string to a method that does not allow it causes an IllegalArgumentException.
+This library does not trim String input values. It is the task of the developer to hand in trimmed
+strings. Hence it is possible to pass in a whitespace string where an empty string would cause
+an Exception - this is not the way it's meant to be used.<br/>
+
+
+</body>
+</html>

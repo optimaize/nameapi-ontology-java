@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.nameapi.ontology</groupId>
+    <artifactId>nameapi-ontology5</artifactId>
+    <name>nameapi-ontology5</name>
+    <!--<version>5.1-SNAPSHOT</version>-->
+    <version>5.0.1</version>
+    <packaging>pom</packaging>
+
+    <url>http://www.nameapi.org</url>
+    <description>
+        Contains the domain classes that are used as input to the NameAPI server.
+        Use the 'core' module, and optionally the 'json' module.
+    </description>
+    <organization>
+        <name>Optimaize GmbH, Switzerland</name>
+        <url>http://www.optimaize.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Fabian Kessler</name>
+        </developer>
+        <developer>
+            <name>Nicole Torres</name>
+        </developer>
+        <developer>
+            <name>Alexei Arshavin</name>
+        </developer>
+        <developer>
+            <name>Gabriela Achim</name>
+        </developer>
+        <developer>
+            <name>Sam B.</name>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>GPLv3</name>
+        </license>
+    </licenses>
+
+    <properties>
+        <java-version>1.7</java-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <repo-base-url>http://maven.nameprofiler.com:8088</repo-base-url>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <jackson.version>2.5.4</jackson.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>optimaize-release</id>
+            <url>${repo-base-url}/artifactory/libs-release-local</url>
+            <releases><enabled>true</enabled></releases>
+        </repository>
+        <repository>
+            <id>optimaize-snapshot</id>
+            <url>${repo-base-url}/artifactory/libs-snapshot-local</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>optimaize-release</id>
+            <name>maven.nameprofiler.com-releases</name>
+            <url>${repo-base-url}/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>optimaize-snapshot</id>
+            <name>maven.nameprofiler.com-snapshots</name>
+            <url>${repo-base-url}/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5</version>
+            </plugin>
+            <!-- because the javadoc enforcements went bananas with java8 we have to use profiles
+            in order to build for both java7 and java8. -->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--<version>${maven-javadoc-plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-javadocs</id>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <doctitle>NameAPI: ${project.name} ${project.version} API</doctitle>
+                    <finalName>nameapi-ontology-${project.version}</finalName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+            <id>java7</id>
+            <activation>
+                <jdk>1.7</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>java8</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <additionalparam>-Xdoclint:none</additionalparam>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>annotations</artifactId>
+            <!-- updated on 2013-07-23 -->
+            <version>12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <!-- updated on 2016-03-18. -->
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <!-- updated on 2015-11-04. -->
+            <version>6.9.9</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <modules>
+        <module>core</module>
+        <module>json</module>
+    </modules>
+
+</project>

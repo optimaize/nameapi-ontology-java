@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.nameapi.ontology</groupId>
+        <artifactId>nameapi-ontology5</artifactId>
+        <!--<version>5.1-SNAPSHOT</version>-->
+        <version>5.0.1</version>
+    </parent>
+
+    <groupId>org.nameapi.ontology.core</groupId>
+    <artifactId>nameapi-ontology5-core</artifactId>
+    <name>nameapi-ontology5-core</name>
+
+    <url>http://www.nameapi.org</url>
+    <description>
+        Contains the domain classes that are used as input to the NameAPI server.
+
+        These are the same that the Java web service client library uses.
+        That's exactly the reason why these are in a separate project; so that they can
+        be shared easily, and can be included as a separate dependency in other projects.
+
+        See overview.html
+    </description>
+    <organization>
+        <name>Optimaize GmbH, Switzerland</name>
+        <url>http://www.optimaize.com/</url>
+    </organization>
+
+
+
+    <properties>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,23 @@
+Version 4.0
+================================================================================
+
+Changed getter concept where the return value is nullable from get/require/has
+to Guava's Optional.
+
+The apiKey param is now part of the Context.
+
+
+
+Version 4.1, 4.2 and 4.3
+================================================================================
+
+Various smaller changes, see version control history and bugtracker.
+
+
+
+Version 5.0
+================================================================================
+
+Added JSON support. Split into 2 modules core and json.
+
+
