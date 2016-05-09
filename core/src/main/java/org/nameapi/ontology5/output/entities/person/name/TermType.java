@@ -117,7 +117,7 @@ public enum TermType {
      * A previous surname may be a surname at birth, but it doesn't need to be, we are not sure. It can be
      * the surname from before a divorce.
      *
-     * @since version 5.1
+     * @since version 5.0
      */
     PREVIOUSSURNAME,
     /**
@@ -126,7 +126,7 @@ public enum TermType {
      * It can be a surname at birth, or a previous surname, or it can be the current or former surname of the
      * husband/wife.
      *
-     * @since version 5.1
+     * @since version 5.0
      */
     OTHERSURNAME,
 
@@ -141,7 +141,7 @@ public enum TermType {
 
     /**
      * Examples: "Germany", "Deutschland"
-     * @since version 5.1
+     * @since version 5.0
      */
     COUNTRYNAME,
 
