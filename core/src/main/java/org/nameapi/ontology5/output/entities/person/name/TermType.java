@@ -144,6 +144,11 @@ public enum TermType {
      * @since version 5.0
      */
     COUNTRYNAME,
+    /**
+     * Example: "New York"
+     * @since version 5.1
+     */
+    PLACENAME,
 
     ;
 
