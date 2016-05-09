@@ -150,6 +150,12 @@ public enum TermType {
      */
     PLACENAME,
 
+    /**
+     * Anything that was identified as a word where no other more specific term type was available.
+     * @since version 5.1
+     */
+    WORD,
+
     ;
 
 
