@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.nameapi.ontology5.util.NameTransformer;
 import org.nameapi.ontology5.util.ValueTransformer;
 import org.nameapi.ontology5.Vocabulary;
 import org.nameapi.ontology5.input.entities.address.AddressRelation;
@@ -72,4 +73,7 @@ public interface InputPerson {
 
     @Nullable
     InputPerson transform(@NotNull ValueTransformer transformer);
+
+    @Nullable
+    InputPerson transform(@NotNull NameTransformer transformer);
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.nameapi.ontology5.util.NameTransformer;
 import org.nameapi.ontology5.util.ValueTransformer;
 import org.nameapi.ontology5.util.ValueTransformerUtil;
 import org.nameapi.ontology5.input.entities.address.AddressRelation;
@@ -98,5 +99,18 @@ public class LegalInputPersonImpl extends AbstractInputPerson implements LegalIn
             return null;
         }
         return new LegalInputPersonImpl(modPersonName, modAge, modCorrespondenceLanguage, modAddresses, modTelNumbers, modEmailAddresses);
+    }
+
+    @Nullable
+    @Override
+    public InputPerson transform(@NotNull NameTransformer transformer) {
+        if (!personName.isPresent()) {
+            return this;
+        }
+        InputPersonName modPersonName = transformer.transform(personName.get());
+        if (modPersonName==null && !age.isPresent() && !correspondenceLanguage.isPresent() && addresses.isEmpty() && telNumbers.isEmpty() && emailAddresses.isEmpty()) {
+            return null;
+        }
+        return new LegalInputPersonImpl(Optional.fromNullable(modPersonName), age, correspondenceLanguage, addresses, telNumbers, emailAddresses);
     }
 }
