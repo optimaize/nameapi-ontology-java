@@ -163,7 +163,7 @@ public enum TermType {
      * Developer: Call this before doing a switch on an enum value.
      */
     public static void assertSize(int size) {
-        assert values().length == size : "Update the code that calls this with outdated size "+size+"!";
+        assert values().length==size : "Update the code calling TermType.assertSize() with outdated "+size+" instead of "+values().length+"!";
     }
 
 }
