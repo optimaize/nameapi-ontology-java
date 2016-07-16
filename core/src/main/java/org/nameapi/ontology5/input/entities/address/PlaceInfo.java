@@ -21,7 +21,7 @@ import java.util.List;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = StructuredPlaceInfo.class, name = "SegregatedPlaceInfo"),
+        @JsonSubTypes.Type(value = StructuredPlaceInfo.class, name = "StructuredPlaceInfo"),
 })
 public interface PlaceInfo {
 

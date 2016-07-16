@@ -20,7 +20,7 @@ import java.util.List;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = StructuredStreetInfo.class, name = "SegregatedStreetInfo"),
+        @JsonSubTypes.Type(value = StructuredStreetInfo.class, name = "StructuredStreetInfo"),
         @JsonSubTypes.Type(value = SingleStringStreetInfo.class, name = "SingleStringStreetInfo")
 })
 public interface StreetInfo {

@@ -179,7 +179,7 @@ public class StructuredStreetInfo implements StreetInfo {
 
     @Override
     public String toString() {
-        String s = "SegregatedStreetInfo{";
+        String s = "StructuredStreetInfo{";
         s += "streetName='" + streetName + '\'';
         if (streetNumber.isPresent()) s += ", streetNumber=" + streetNumber.get();
         if (building.isPresent()) s += ", building=" + building.get();
