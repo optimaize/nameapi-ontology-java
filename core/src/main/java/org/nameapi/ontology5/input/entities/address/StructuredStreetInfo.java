@@ -83,7 +83,9 @@ public class StructuredStreetInfo implements StreetInfo {
 
     private String makeStreetAndNumber() {
         StringBuilder sb = new StringBuilder();
-        sb.append(streetName);
+        if (streetName.isPresent()) {
+            sb.append(streetName.get());
+        }
         if (streetNumber.isPresent()) {
             sb.append(" "+streetNumber.get());
         }
