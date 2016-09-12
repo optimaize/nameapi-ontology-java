@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
+import org.jetbrains.annotations.NotNull;
 import org.nameapi.ontology5.input.entities.address.StreetInfo;
 
 /**
@@ -34,6 +35,16 @@ public enum StreetMatchType {
      */
     DIFFERENT,
     ;
+
+    public boolean isEqualOrBetterThan(@NotNull StreetMatchType type) {
+        return (this.compareTo(type) <= 0);
+    }
+    public boolean isEqualOrWorseThan(@NotNull StreetMatchType type) {
+        return (this.compareTo(type) >= 0);
+    }
+    public boolean isWorseThan(@NotNull StreetMatchType type) {
+        return (this.compareTo(type) > 0);
+    }
 
     public static void assertSize(int expectedItems) {
         assert values().length == expectedItems : "Update the code calling StreetMatchType with " + expectedItems + "!";

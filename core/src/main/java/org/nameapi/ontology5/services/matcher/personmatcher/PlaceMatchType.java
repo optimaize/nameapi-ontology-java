@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
+import org.jetbrains.annotations.NotNull;
 import org.nameapi.ontology5.input.entities.address.PlaceInfo;
 
 /**
@@ -35,6 +36,16 @@ public enum PlaceMatchType {
      */
     DIFFERENT,
     ;
+
+    public boolean isEqualOrBetterThan(@NotNull PlaceMatchType type) {
+        return (this.compareTo(type) <= 0);
+    }
+    public boolean isEqualOrWorseThan(@NotNull PlaceMatchType type) {
+        return (this.compareTo(type) >= 0);
+    }
+    public boolean isWorseThan(@NotNull PlaceMatchType type) {
+        return (this.compareTo(type) > 0);
+    }
 
     public static void assertSize(int expectedItems) {
         assert values().length == expectedItems : "Update the code calling PlaceMatchType with " + expectedItems + "!";
