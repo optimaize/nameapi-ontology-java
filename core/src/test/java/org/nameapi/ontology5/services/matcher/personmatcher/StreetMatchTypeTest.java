@@ -1,12 +1,13 @@
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
 import junit.framework.TestCase;
+import org.testng.annotations.Test;
 
 /**
  * @author gabriela
  */
 public class StreetMatchTypeTest extends TestCase {
-
+    @Test
     public void testIsEqualOrBetterThan() throws Exception {
         assertTrue(StreetMatchType.EQUAL.isEqualOrBetterThan(StreetMatchType.EQUAL));
         assertTrue(StreetMatchType.EQUAL.isEqualOrBetterThan(StreetMatchType.MATCHING));
@@ -15,7 +16,7 @@ public class StreetMatchTypeTest extends TestCase {
 
         assertFalse(StreetMatchType.SIMILAR.isWorseThan(StreetMatchType.DIFFERENT));
     }
-
+    @Test
     public void testIsEqualOrWorseThan() throws Exception {
         assertTrue(StreetMatchType.DIFFERENT.isEqualOrWorseThan(StreetMatchType.MATCHING));
         assertTrue(StreetMatchType.DIFFERENT.isEqualOrWorseThan(StreetMatchType.SIMILAR));
@@ -25,7 +26,7 @@ public class StreetMatchTypeTest extends TestCase {
 
         assertFalse(StreetMatchType.EQUAL.isEqualOrWorseThan(StreetMatchType.SIMILAR));
     }
-
+    @Test
     public void testIsWorseThan() throws Exception {
         assertTrue(StreetMatchType.DIFFERENT.isWorseThan(StreetMatchType.MATCHING));
         assertTrue(StreetMatchType.DIFFERENT.isWorseThan(StreetMatchType.SIMILAR));
