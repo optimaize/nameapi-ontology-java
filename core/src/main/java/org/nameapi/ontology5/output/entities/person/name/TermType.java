@@ -131,6 +131,13 @@ public enum TermType {
     OTHERSURNAME,
 
     /**
+     * Example: the word "formerly" in "Johnson (formerly Smith)
+     * Others are "previously", abbreviations like "prev." and all the translations.
+     * @since version 5.2
+     */
+    FORMERLYINDICATOR,
+
+    /**
      * Examples: "c/o" (care of), "bei", "zu Handen".
      * Used in addresses only.
      * See https://en.wiktionary.org/wiki/care_of
