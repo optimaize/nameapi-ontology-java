@@ -167,7 +167,7 @@ public class StructuredPlaceInfo implements PlaceInfo {
 
     @Override
     public String toString() {
-        String s = "SegregatedPlaceInfo{";
+        String s = "StructuredPlaceInfo{";
         if (locality.isPresent()) s += "locality=" + locality.get();
         if (postalCode.isPresent()) s += ", postalCode=" + postalCode.get();
         if (neighborhood.isPresent()) s += ", neighborhood=" + neighborhood.get();

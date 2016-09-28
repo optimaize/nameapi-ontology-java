@@ -7,6 +7,7 @@ import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.nameapi.ontology5.cremalang.lang.Arguments;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.nameapi.ontology5.util.NameTransformer;
 import org.nameapi.ontology5.util.ValueTransformer;
 import org.nameapi.ontology5.util.ValueTransformerUtil;
 import org.nameapi.ontology5.input.entities.address.AddressRelation;
@@ -211,6 +212,23 @@ final class NaturalInputPersonImpl extends AbstractInputPerson implements Natura
 
         return new NaturalInputPersonImpl(modPersonName, gender, modAge, maritalStatus, modNationalities, modNativeLanguages,
                 modCorrespondenceLanguage, modReligion, modAddresses, modTelNumbers, modEmailAddresses);
+    }
+
+    @Nullable
+    @Override
+    public InputPerson transform(@NotNull NameTransformer transformer) {
+        if (!personName.isPresent()) {
+            return this;
+        }
+        InputPersonName modPersonName = transformer.transform(personName.get());
+        if (modPersonName==null && gender.isUnknown() && !age.isPresent() && maritalStatus.isUnknown() &&
+                nationalities.isEmpty() && nativeLanguages.isEmpty() &&
+                !correspondenceLanguage.isPresent() && !religion.isPresent() &&
+                addresses.isEmpty() && telNumbers.isEmpty() && emailAddresses.isEmpty()) {
+            return null;
+        }
+        return new NaturalInputPersonImpl(Optional.fromNullable(modPersonName), gender, age, maritalStatus, nationalities, nativeLanguages,
+                correspondenceLanguage, religion, addresses, telNumbers, emailAddresses);
     }
 
 }

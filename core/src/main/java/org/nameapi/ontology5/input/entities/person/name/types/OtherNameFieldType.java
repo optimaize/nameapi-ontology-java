@@ -34,6 +34,14 @@ public enum OtherNameFieldType implements FieldType {
      */
     SALUTATION,
 
+    /**
+     * An input field that is used for titles, eg "Dr." or "Prof. Dr.".
+     * This is similar to the {@link AmericanNameFieldType#NAMEPREFIX}.
+     */
+    TITLE,
+
+    QUALIFIER,
+
     ;
 
     /**

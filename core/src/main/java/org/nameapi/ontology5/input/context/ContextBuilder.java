@@ -86,7 +86,7 @@ public class ContextBuilder {
     }
 
     /**
-     * Calls {@link #property} for each item in {@code properties}.
+     * Puts in all given properties by calling {@link #property} for each item in {@code properties}.
      */
     @NotNull
     public ContextBuilder properties(@NotNull Map<String, String> properties) {

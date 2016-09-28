@@ -9,12 +9,13 @@ public enum AmericanNameFieldType implements FieldType {
 
     /**
      * American style names have (can have) middle names.
-     * These are usually given names, but can also be initials, or surnames, among other things.
+     * <p>These are usually given names, but can also be initials, or surnames, among other things.</p>
      */
     MIDDLENAME,
 
     /**
      * The name prefix field is used for a titles such as "Dr.".
+     * <p>There is also the {@link OtherNameFieldType#TITLE}.</p>
      */
     NAMEPREFIX,
 

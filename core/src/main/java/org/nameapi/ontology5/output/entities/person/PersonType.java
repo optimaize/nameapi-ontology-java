@@ -29,9 +29,11 @@ public enum PersonType {
     LEGAL,
 
     /**
-     * Two or more natural people.
+     * Two or more people.
+     * <p>Often the members are natural people, but they don't have to be.</p>
      * <p>They may be a couple, married, brothers and sisters etc.</p>
-     * <p>Example: "Peter  and Petra Smith".</p>
+     * <p>Example: "Peter and Petra Smith".</p>
+     * <p>When parsing names from addresses then the people in the group may also be unrelated, eg c/o addresses.</p>
      */
     MULTIPLE,
     ;
@@ -42,7 +44,7 @@ public enum PersonType {
      * Developer: Call this before doing a switch on an enum value.
      */
     public static void assertSize(int size) {
-        assert values().length == size : "Update the code that calls this with outdated size "+size+"!";
+        assert values().length==size : "Update the code calling PersonType.assertSize() with outdated "+size+" instead of "+values().length+"!";
     }
 
 }

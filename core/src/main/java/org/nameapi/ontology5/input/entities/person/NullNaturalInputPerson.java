@@ -2,6 +2,7 @@ package org.nameapi.ontology5.input.entities.person;
 
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.Nullable;
+import org.nameapi.ontology5.util.NameTransformer;
 import org.nameapi.ontology5.util.ValueTransformer;
 import org.nameapi.ontology5.input.entities.address.AddressRelation;
 import org.nameapi.ontology5.input.entities.contact.EmailAddress;
@@ -94,6 +95,12 @@ public class NullNaturalInputPerson implements NaturalInputPerson {
     @Nullable
     @Override
     public InputPerson transform(@NotNull ValueTransformer transformer) {
+        return this;
+    }
+
+    @Nullable
+    @Override
+    public InputPerson transform(@NotNull NameTransformer transformer) {
         return this;
     }
 }

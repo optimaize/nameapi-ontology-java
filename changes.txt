@@ -1,10 +1,10 @@
-Version 4.0
+Version 5.0
 ================================================================================
 
-Changed getter concept where the return value is nullable from get/require/has
-to Guava's Optional.
+Added JSON support. Split into 2 modules core and json.
+Modified output objects for name parser.
+More enum values in TermType (see @since tags).
 
-The apiKey param is now part of the Context.
 
 
 
@@ -15,9 +15,16 @@ Various smaller changes, see version control history and bugtracker.
 
 
 
-Version 5.0
+Version 4.0
 ================================================================================
 
-Added JSON support. Split into 2 modules core and json.
+Changed getter concept where the return value is nullable from get/require/has
+to Guava's Optional.
+
+The apiKey param is now part of the Context.
+
+
+
+
 
 

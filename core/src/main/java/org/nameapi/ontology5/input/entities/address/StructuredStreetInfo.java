@@ -83,7 +83,9 @@ public class StructuredStreetInfo implements StreetInfo {
 
     private String makeStreetAndNumber() {
         StringBuilder sb = new StringBuilder();
-        sb.append(streetName);
+        if (streetName.isPresent()) {
+            sb.append(streetName.get());
+        }
         if (streetNumber.isPresent()) {
             sb.append(" "+streetNumber.get());
         }
@@ -179,7 +181,7 @@ public class StructuredStreetInfo implements StreetInfo {
 
     @Override
     public String toString() {
-        String s = "SegregatedStreetInfo{";
+        String s = "StructuredStreetInfo{";
         s += "streetName='" + streetName + '\'';
         if (streetNumber.isPresent()) s += ", streetNumber=" + streetNumber.get();
         if (building.isPresent()) s += ", building=" + building.get();
