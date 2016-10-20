@@ -125,6 +125,12 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <!-- disable this doclint param when building with JDK7
+                            or use a profile, see http://jdpgrailsdev.github.io/blog/2014/04/03/maven_java8_javadoc.html
+                            -->
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
