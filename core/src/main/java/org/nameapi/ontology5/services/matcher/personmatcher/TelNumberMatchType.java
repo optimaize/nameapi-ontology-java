@@ -15,6 +15,10 @@ public enum TelNumberMatchType {
      * Different syntax for country codes like "+44" vs "0044" are considered equal.
      * Having an internationally formatted number with and without a bracket for a number to be dialed only
      * locally, eg "+44 (0) 999" vs "+44 999", is considered equal.
+     * 
+     * <p>As of now this value is also used for a number vs the equivalent phoneword.
+     * Example: "0800 AGSMUEHLHEIM" vs "0800247683454346"
+     * A new value "MATCHING" or "EQUIVALENT" could be introduced for such kinds.</p>
      */
     EQUAL,
 
