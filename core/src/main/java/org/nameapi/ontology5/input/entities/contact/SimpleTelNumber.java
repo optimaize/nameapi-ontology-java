@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.input.entities.contact;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.nameapi.ontology5.util.ValueTransformer;
@@ -23,7 +24,7 @@ final class SimpleTelNumber implements TelNumber {
      * @see TelNumber#getFullNumber()
      * @param fullNumber The complete number in any format. Not empty.
      */
-    public SimpleTelNumber(@NotNull String fullNumber) {
+    public SimpleTelNumber(@JsonProperty("fullNumber") @NotNull String fullNumber) {
         if (fullNumber.isEmpty()) {
             throw new IllegalArgumentException("Number may not be empty!");
         }

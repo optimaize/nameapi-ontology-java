@@ -1,5 +1,8 @@
 package org.nameapi.ontology5.input.entities.contact;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.nameapi.ontology5.util.ValueTransformer;
@@ -29,6 +32,11 @@ import org.nameapi.ontology5.util.ValueTransformer;
  *
  * @author Nicole Torres
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = SimpleTelNumber.class, name = "SimpleTelNumber")
+})
 public interface TelNumber {
 
     /**

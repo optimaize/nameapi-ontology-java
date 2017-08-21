@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.input.entities.contact;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.nameapi.ontology5.util.ValueTransformer;
@@ -21,7 +22,7 @@ final class EmailAddressImpl implements EmailAddress {
     /**
      * @param emailAddress Not empty. For example "john@example.com".
      */
-    public EmailAddressImpl(@NotNull String emailAddress) {
+    public EmailAddressImpl(@JsonProperty("emailAddress") @NotNull String emailAddress) {
         if (emailAddress.isEmpty()) {
             throw new IllegalArgumentException("Email address may not be empty!");
         }
