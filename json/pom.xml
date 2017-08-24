@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.nameapi.ontology</groupId>
         <artifactId>nameapi-ontology5</artifactId>
-        <version>5.3-SNAPSHOT</version>
+        <version>5.4-SNAPSHOT</version>
     </parent>
 
     <groupId>org.nameapi.ontology.json</groupId>
