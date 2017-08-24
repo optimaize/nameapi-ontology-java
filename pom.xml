@@ -5,7 +5,7 @@
     <groupId>org.nameapi.ontology</groupId>
     <artifactId>nameapi-ontology5</artifactId>
     <name>nameapi-ontology5</name>
-    <version>5.3-SNAPSHOT</version>
+    <version>5.3</version>
     <packaging>pom</packaging>
 
     <url>http://www.nameapi.org</url>
@@ -44,7 +44,7 @@
         <connection>scm:git:git://github.com/optimaize/nameapi-ontology-java.git</connection>
         <developerConnection>scm:git:git@github.com:optimaize/nameapi-ontology-java.git</developerConnection>
         <url>http://github.com/optimaize/nameapi-ontology-java</url>
-        <tag>HEAD</tag>
+        <tag>nameapi-ontology5-5.3</tag>
     </scm>
 
     <properties>
@@ -125,12 +125,6 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <configuration>
-                            <!-- disable this doclint param when building with JDK7
-                            or use a profile, see http://jdpgrailsdev.github.io/blog/2014/04/03/maven_java8_javadoc.html
-                            -->
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -165,6 +159,18 @@
     </build>
 
     <profiles>
+        <profile>
+            <!-- make the build work with Java7 and Java8 out of the box, see
+             https://stackoverflow.com/questions/22528767/how-to-work-around-the-stricter-java-8-javadoc-when-using-maven -->
+            <id>disable-java8-doclint</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <additionalparam>-Xdoclint:none</additionalparam>
+            </properties>
+        </profile>
+
         <profile>
             <id>release-sign-artifacts</id>
             <activation>
