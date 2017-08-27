@@ -15,13 +15,13 @@ public class DetectedRisk implements Comparable<DetectedRisk> {
     @NotNull
     private final RiskType riskType;
     private final double riskScore;
-    @Nullable
+    @NotNull
     private final String reason;
 
     public DetectedRisk(@JsonProperty("dataItem") @NotNull DataItem dataItem,
                         @JsonProperty("fakeMatchType") @NotNull RiskType riskType,
                         @JsonProperty("riskScore") double riskScore,
-                        @JsonProperty("reason") @Nullable String reason
+                        @JsonProperty("reason") @NotNull String reason
     ) {
         this.dataItem = dataItem;
         this.riskType = riskType;
@@ -43,7 +43,7 @@ public class DetectedRisk implements Comparable<DetectedRisk> {
         return riskScore;
     }
 
-    @Nullable
+    @NotNull
     public String getReason() {
         return reason;
     }
