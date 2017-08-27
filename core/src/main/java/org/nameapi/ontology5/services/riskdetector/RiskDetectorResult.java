@@ -59,7 +59,9 @@ public class RiskDetectorResult {
     }
 
     /**
-     * @return Sorted from highest to lowest risk. Immutable.
+     * Returns all the detected risks.
+     * @return Sorted by severity having the worst come first.
+     *         Possibly empty, guaranteed to be non-empty if the getScore() is > 0. Immutable.
      */
     @NotNull
     public List<DetectedRisk> getRisks() {

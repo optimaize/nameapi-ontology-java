@@ -39,10 +39,16 @@ public class DetectedRisk implements Comparable<DetectedRisk> {
         return riskType;
     }
 
+    /**
+     * @return range (0,1] the higher the worse.
+     */
     public double getRiskScore() {
         return riskScore;
     }
 
+    /**
+     * A one sentence text reason intended for the human that explains the risk.
+     */
     @NotNull
     public String getReason() {
         return reason;
