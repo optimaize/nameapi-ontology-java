@@ -1,6 +1,7 @@
 package org.nameapi.ontology5.services.riskdetector;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
@@ -43,6 +44,7 @@ public class RiskDetectorResult {
         return score;
     }
 
+    @JsonIgnore
     public boolean hasRisk() {
         return !risks.isEmpty();
     }
@@ -50,7 +52,7 @@ public class RiskDetectorResult {
     /**
      * @return The risk with the highest score, if any.
      */
-    @NotNull
+    @NotNull @JsonIgnore
     public Optional<DetectedRisk> getWorstRisk() {
         if (risks.isEmpty()) return Optional.absent();
         return Optional.of(risks.get(0));
