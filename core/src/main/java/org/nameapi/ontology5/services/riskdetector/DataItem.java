@@ -6,31 +6,35 @@ package org.nameapi.ontology5.services.riskdetector;
 public enum DataItem {
 
     /**
-     * The person's name (given name, surname, business name ...).
+     * The person's name (given name, surname, business name, ...).
      */
     NAME,
 
     /**
-     * The person's address (domicile, delivery address, ...).
+     * A person's address (domicile, delivery address, ...) or a part in it (street name, place name, ...).
      */
     ADDRESS,
 
     /**
-     * TODO i think we want to rename this to AGE to be consistent.
-     * for natural people it's the birth date
-     * for legal people it's the founding time.
+     * For natural people it's the birth date
+     * For legal people it's the founding time.
      */
-    BIRTHDATE,
+    AGE,
 
     /**
-     * TODO rename to EMAIL, it's clear what it is.
+     * An email address.
      */
-    EMAIL_ADDRESS,
+    EMAIL,
 
     /**
-     * Includes telephone numbers, fax numbers, mobile phone numbers, and whatever else.
+     * Includes telephone numbers, fax numbers, mobile phone numbers etc.
      */
     TEL,
+
+    /**
+     * Any other input item for which there's no dedicated value above.
+     */
+    OTHER,
     ;
 
     public static void assertSize(int size) {
