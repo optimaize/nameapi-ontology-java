@@ -9,7 +9,7 @@ package org.nameapi.ontology5.services.riskdetector;
  * the input.</p>
  *
  */
-public enum DisguisedRiskType implements RiskType {
+public enum DisguiseRiskType implements RiskType {
     
 
     /**
@@ -49,7 +49,7 @@ public enum DisguisedRiskType implements RiskType {
 
 
     public static void assertSize(int size) {
-        assert values().length==size : "Update the code calling DisguisedRiskType.assertSize() with outdated "+size+" instead of "+values().length+"!";
+        assert values().length==size : "Update the code calling DisguiseRiskType.assertSize() with outdated "+size+" instead of "+values().length+"!";
     }
 
 }

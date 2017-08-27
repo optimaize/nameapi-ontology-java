@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = FakeRiskType.class, name = "FakeRiskType"),
-        @JsonSubTypes.Type(value = DisguisedRiskType.class, name = "DisguisedRiskType") }
+        @JsonSubTypes.Type(value = DisguiseRiskType.class, name = "DisguiseRiskType") }
 )
 public interface RiskType {
 
