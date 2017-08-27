@@ -1,27 +1,48 @@
 package org.nameapi.ontology5.services.riskdetector;
 
 /**
+ * Classification of disguise risks.
+ *
+ * <p>Such mangled input is used to circumvent machine processing.</p>
+ *
+ * <p>Humans can still understand these modified values, but machines can't unless they detect the patterns and clean
+ * the input.</p>
+ *
  */
 public enum DisguisedRiskType implements RiskType {
     
 
     /**
-     * Padding example: XXXJohnXXX
+     * Padding is adding content to the left/right of a value.
+     *
+     * Example: XXXJohnXXX
      */
     PADDING,
 
     /**
-     * Stutter typing example: Petttttttttterson
+     * Example: Petttttttttterson
      */
-    STUTTERTYPING,
+    STUTTER_TYPING,
 
     /**
      * Spaced typing example: P e t e r   M i l l e r
      */
-    SPACEDTYPING,
+    SPACED_TYPING,
 
     /**
-     * Everything not in any of the other categories (enum values).
+     * Everything that does not fit into any of the other categories.
+     *
+     * Individual categories may be created in the future.
+     *
+     * Currently here goes:
+     *  - Leetspeak (using numbers instead of letters): l33t spe4k
+     *  - Crossing fields (moving a part into the next field): ["Danie", "lJohnson"]
+     *    This often happens unintentionally.
+     *  - Writing out numbers where digits are expected, for example in house numbers.
+     *    For example "twentyseven" instead of "27".
+     *  - Using visually identical or similar letters with different Unicode values.
+     *    Mixing scripts: For example mixing the Cyrillic with the Latin alphabet. Cyrillic has visually identical letters.
+     *    Same script: For example using the lower case L for an upper case i (l vs I) and vice versa, using a zero 0 for an oh O.
      */
     OTHER,
     ;
