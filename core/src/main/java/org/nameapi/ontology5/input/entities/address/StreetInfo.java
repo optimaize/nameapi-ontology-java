@@ -47,7 +47,7 @@ public interface StreetInfo {
      * In that case it's also possible that the data is only available "together", but some records don't
      * have a street number at all in the string. It's up to the calling method to do the parsing.</p>
      *
-     * <p>When the data is available separate in {@link #getStreetName} and {@link #getStreetNumber}
+     * <p>When the data is available separate in {@link #getStreetName} and {@link #getHouseNumber}
      * then this method here returns a combination of those. The implementation is advised to concatenate
      * the values in a format which is suitable for the customs. For example a specialized GermanAddress
      * would append the number to the street, separated by a space.</p>
@@ -79,11 +79,11 @@ public interface StreetInfo {
      * <p>Something like "15" or "15-17" or "15b" etc.</p>
      * <p>There are addresses without a house identifier. An example is when there is just that one house,
      * for example a farm house, on that road.</p>
-     * @return The street number/identifier alone,
+     * @return The house number/identifier alone,
      *         or <code>absent</code> if this info is not available or not available alone.
      */
     @NotNull
-    Optional<String> getStreetNumber();
+    Optional<String> getHouseNumber();
 
     /**
      * @see AddressItemType#BUILDING

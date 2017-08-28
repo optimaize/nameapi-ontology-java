@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 public class StructuredStreetInfoBuilder {
 
     private String streetName;
-    private String streetNumber;
+    private String houseNumber;
     private String building;
     private String staircase;
     private String floor;
@@ -32,9 +32,9 @@ public class StructuredStreetInfoBuilder {
     }
 
     @NotNull
-    public StructuredStreetInfoBuilder streetNumber(@Nullable String streetNumber) {
-        if (this.streetNumber !=null) throw new IllegalStateException("Set already!");
-        this.streetNumber = clean(streetNumber);
+    public StructuredStreetInfoBuilder houseNumber(@Nullable String houseNumber) {
+        if (this.houseNumber !=null) throw new IllegalStateException("Set already!");
+        this.houseNumber = clean(houseNumber);
         return this;
     }
 
@@ -78,13 +78,13 @@ public class StructuredStreetInfoBuilder {
     }
 
     private boolean allNull() {
-        return streetName==null && streetNumber==null && building==null && staircase==null && floor==null && apartment==null;
+        return streetName==null && houseNumber ==null && building==null && staircase==null && floor==null && apartment==null;
     }
 
     private StructuredStreetInfo _build() {
         return new StructuredStreetInfo(
                 Optional.fromNullable(streetName),
-                Optional.fromNullable(streetNumber),
+                Optional.fromNullable(houseNumber),
                 Optional.fromNullable(building),
                 Optional.fromNullable(staircase),
                 Optional.fromNullable(floor),

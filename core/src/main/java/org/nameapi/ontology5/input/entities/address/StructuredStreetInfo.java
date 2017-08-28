@@ -21,7 +21,7 @@ public class StructuredStreetInfo implements StreetInfo {
     @NotNull
     private final Optional<String> streetName;
     @NotNull
-    private final Optional<String> streetNumber;
+    private final Optional<String> houseNumber;
     @NotNull
     private final Optional<String> building;
     @NotNull
@@ -33,16 +33,16 @@ public class StructuredStreetInfo implements StreetInfo {
 
     @JsonCreator
     public StructuredStreetInfo(@JsonProperty("streetName") @NotNull Optional<String> streetName,
-                                @JsonProperty("streetNumber") @NotNull Optional<String> streetNumber,
+                                @JsonProperty("houseNumber") @NotNull Optional<String> houseNumber,
                                 @JsonProperty("building") @NotNull Optional<String> building,
                                 @JsonProperty("staircase") @NotNull Optional<String> staircase,
                                 @JsonProperty("floor") @NotNull Optional<String> floor,
                                 @JsonProperty("apartment") @NotNull Optional<String> apartment) {
-        if (ValueTransformerUtil.allAbsent(streetName, streetNumber, building, staircase, floor, apartment)) {
+        if (ValueTransformerUtil.allAbsent(streetName, houseNumber, building, staircase, floor, apartment)) {
             throw new IllegalArgumentException("At least one value must be available!");
         }
         this.streetName = streetName;
-        this.streetNumber = streetNumber;
+        this.houseNumber = houseNumber;
         this.building = building;
         this.staircase = staircase;
         this.floor = floor;
@@ -86,8 +86,8 @@ public class StructuredStreetInfo implements StreetInfo {
         if (streetName.isPresent()) {
             sb.append(streetName.get());
         }
-        if (streetNumber.isPresent()) {
-            sb.append(" "+streetNumber.get());
+        if (houseNumber.isPresent()) {
+            sb.append(" "+houseNumber.get());
         }
         return sb.toString();
     }
@@ -134,8 +134,8 @@ public class StructuredStreetInfo implements StreetInfo {
 
     @Override
     @NotNull
-    public Optional<String> getStreetNumber() {
-        return streetNumber;
+    public Optional<String> getHouseNumber() {
+        return houseNumber;
     }
 
     @Override
@@ -166,16 +166,16 @@ public class StructuredStreetInfo implements StreetInfo {
     @Override
     public StreetInfo transform(@NotNull ValueTransformer transformer) {
         Optional<String> modStreet = ValueTransformerUtil.transformOptionalStringField(transformer, streetName);
-        Optional<String> modStreetNumber = ValueTransformerUtil.transformOptionalStringField(transformer, streetNumber);
+        Optional<String> modHouseNumber = ValueTransformerUtil.transformOptionalStringField(transformer, houseNumber);
         Optional<String> modBuilding = ValueTransformerUtil.transformOptionalStringField(transformer, building);
         Optional<String> modStaircase = ValueTransformerUtil.transformOptionalStringField(transformer, staircase);
         Optional<String> modFloor = ValueTransformerUtil.transformOptionalStringField(transformer, floor);
         Optional<String> modApartment = ValueTransformerUtil.transformOptionalStringField(transformer, apartment);
 
-        if (ValueTransformerUtil.allAbsent(modStreet, modStreetNumber, modBuilding, modStaircase, modFloor, modApartment)) {
+        if (ValueTransformerUtil.allAbsent(modStreet, modHouseNumber, modBuilding, modStaircase, modFloor, modApartment)) {
             return null;
         }
-        return new StructuredStreetInfo(modStreet, modStreetNumber, modBuilding, modStaircase, modFloor, modApartment);
+        return new StructuredStreetInfo(modStreet, modHouseNumber, modBuilding, modStaircase, modFloor, modApartment);
     }
 
 
@@ -183,7 +183,7 @@ public class StructuredStreetInfo implements StreetInfo {
     public String toString() {
         String s = "StructuredStreetInfo{";
         s += "streetName='" + streetName + '\'';
-        if (streetNumber.isPresent()) s += ", streetNumber=" + streetNumber.get();
+        if (houseNumber.isPresent()) s += ", houseNumber=" + houseNumber.get();
         if (building.isPresent()) s += ", building=" + building.get();
         if (staircase.isPresent()) s += ", staircase=" + staircase.get();
         if (floor.isPresent()) s += ", floor=" + floor.get();
@@ -200,7 +200,7 @@ public class StructuredStreetInfo implements StreetInfo {
         StructuredStreetInfo that = (StructuredStreetInfo) o;
 
         if (!streetName.equals(that.streetName)) return false;
-        if (!streetNumber.equals(that.streetNumber)) return false;
+        if (!houseNumber.equals(that.houseNumber)) return false;
         if (!building.equals(that.building)) return false;
         if (!staircase.equals(that.staircase)) return false;
         if (!floor.equals(that.floor)) return false;
@@ -211,7 +211,7 @@ public class StructuredStreetInfo implements StreetInfo {
     @Override
     public int hashCode() {
         int result = streetName.hashCode();
-        result = 31 * result + streetNumber.hashCode();
+        result = 31 * result + houseNumber.hashCode();
         result = 31 * result + building.hashCode();
         result = 31 * result + staircase.hashCode();
         result = 31 * result + floor.hashCode();

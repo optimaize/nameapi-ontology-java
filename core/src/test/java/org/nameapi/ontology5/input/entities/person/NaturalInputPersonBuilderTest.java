@@ -49,7 +49,7 @@ public class NaturalInputPersonBuilderTest {
                     .addAddressForAll(new StructuredAddressBuilder()
                                     .streetInfo(new StructuredStreetInfoBuilder()
                                                     .streetName("Hill road")
-                                                    .streetNumber("512")
+                                                    .houseNumber("512")
                                     )
                                     .placeInfo(new StructuredPlaceInfoBuilder()
                                                     .locality("Beverly Hills")
@@ -82,7 +82,7 @@ public class NaturalInputPersonBuilderTest {
                 )
         ;
         StructuredAddress address = new StructuredAddressBuilder()
-                .streetInfo(new StructuredStreetInfoBuilder().streetName(fields[4]).streetNumber(fields[5]).build())
+                .streetInfo(new StructuredStreetInfoBuilder().streetName(fields[4]).houseNumber(fields[5]).build())
                 .placeInfo(new StructuredPlaceInfoBuilder()
                                 .locality(fields[3])
                                 .postalCode(fields[2])

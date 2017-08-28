@@ -32,7 +32,7 @@ public class NaturalInputPersonJsonTest extends BaseJsonTest {
                 .addNativeLanguage("en")
                 .correspondenceLanguage("en")
                 .addAddressForAll(new StructuredAddressBuilder()
-                                .streetInfo(new StructuredStreetInfoBuilder().streetName("Hill road").streetNumber("512").build())
+                                .streetInfo(new StructuredStreetInfoBuilder().streetName("Hill road").houseNumber("512").build())
                                 .placeInfo(new StructuredPlaceInfoBuilder()
                                                 .locality("Beverly Hills")
                                                 .postalCode("90210")

@@ -32,7 +32,7 @@ public abstract class BaseStreetInfo implements StreetInfo {
     }
 
     @NotNull @Override
-    public Optional<String> getStreetNumber() {
+    public Optional<String> getHouseNumber() {
         return Optional.absent();
     }
 
