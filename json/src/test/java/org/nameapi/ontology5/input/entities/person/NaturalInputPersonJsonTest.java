@@ -19,7 +19,7 @@ public class NaturalInputPersonJsonTest extends BaseJsonTest {
 
     @Test
     public void test1() throws Exception {
-        NaturalInputPerson original = new NaturalInputPersonBuilder()
+        InputPerson original = new NaturalInputPersonBuilder()
                 .name(
                         NameBuilders.western()
                                 .givenName("John")
@@ -47,10 +47,10 @@ public class NaturalInputPersonJsonTest extends BaseJsonTest {
     }
 
 
-    private void validate(NaturalInputPerson original) throws java.io.IOException {
+    private void validate(InputPerson original) throws java.io.IOException {
         ObjectMapper jackson = mapper();
         String json = jackson.writeValueAsString(original);
-        NaturalInputPerson recreated = jackson.readValue(json, NaturalInputPerson.class);
+        InputPerson recreated = jackson.readValue(json, InputPerson.class);
         assertEquals(recreated, original);
     }
 }
