@@ -33,7 +33,7 @@ import org.nameapi.ontology5.util.ValueTransformer;
  * @author Nicole Torres
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = SimpleTelNumber.class, name = "SimpleTelNumber")
 })
