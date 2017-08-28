@@ -19,7 +19,7 @@ import java.util.List;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = SingleStringAddress.class, name = "SingleStringAddress"),
         @JsonSubTypes.Type(value = MultiLineAddress.class, name = "MultiLineAddress"),
-        @JsonSubTypes.Type(value = StructuredAddress.class, name = "StandardAddress"),
+        @JsonSubTypes.Type(value = StructuredAddress.class, name = "StructuredAddress"),
 })
 public interface InputAddress {
 
