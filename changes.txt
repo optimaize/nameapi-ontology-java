@@ -1,3 +1,14 @@
+Version 5.3
+================================================================================
+
+New result classes for the new risk detector service.
+
+EmailAddress and TelNumber use the same polymorphic JSON functionality as the other classes.
+Renamed StructuredStreetInfo.streetNumber to houseNumber.
+These changes don't affect existing APIs, the domain classes were not in use yet.
+
+
+
 Version 5.0
 ================================================================================
 

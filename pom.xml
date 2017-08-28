@@ -10,8 +10,7 @@
 
     <url>http://www.nameapi.org</url>
     <description>
-        Contains the domain classes that are used as input to the NameAPI server.
-        Use the 'core' module, and optionally the 'json' module.
+        Contains the domain classes that are used as input to the NameAPI services as well as the result objects.
     </description>
     <organization>
         <name>Optimaize GmbH, Switzerland</name>
@@ -32,6 +31,12 @@
         </developer>
         <developer>
             <name>Sam B.</name>
+        </developer>
+        <developer>
+            <name>Serhii Beliablia</name>
+        </developer>
+        <developer>
+            <name>Stefan Cretu</name>
         </developer>
     </developers>
     <licenses>
