@@ -25,7 +25,7 @@ public enum DisguiseRiskType implements RiskType {
     STUTTER_TYPING,
 
     /**
-     * Spaced typing example: P e t e r   M i l l e r
+     * Example: P e t e r   M i l l e r
      */
     SPACED_TYPING,
 

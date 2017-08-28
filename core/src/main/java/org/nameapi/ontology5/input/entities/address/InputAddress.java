@@ -10,7 +10,7 @@ import org.nameapi.ontology5.util.ValueTransformer;
 import java.util.List;
 
 /**
- * Represents a physical address which can be an address to a house or to a postbox.
+ * Represents a physical address which can be an address to a house, a postbox, a "packet pickup station" etc.
  *
  * @see StructuredAddressBuilder
  * @author sam

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * An address where the individual parts are structured.
+ * An address where the individual parts (street name, postal code, ...) are structured into separate values.
  *
  * This address works for all countries.
  *
@@ -117,7 +117,7 @@ public class StructuredAddress implements InputAddress {
 
     @Override
     public String toString() {
-        String s = "StandardAddress{";
+        String s = "StructuredAddress{";
         s += "streetInfo=" + streetInfo;
         if (pobox.isPresent()) s += ", pobox=" + pobox.get();
         s += ", placeInfo=" + placeInfo;

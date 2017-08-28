@@ -28,6 +28,9 @@ public class StructuredPlaceInfoBuilder {
     private String country;
 
 
+    /**
+     * Also known as place name, city etc.
+     */
     @NotNull
     public StructuredPlaceInfoBuilder locality(@Nullable String locality) {
         if (this.locality !=null) throw new IllegalStateException("Set already!");
@@ -35,6 +38,9 @@ public class StructuredPlaceInfoBuilder {
         return this;
     }
 
+    /**
+     * Also known as zip code in the USA.
+     */
     @NotNull
     public StructuredPlaceInfoBuilder postalCode(@Nullable String postalCode) {
         if (this.postalCode !=null) throw new IllegalStateException("Set already!");
@@ -55,6 +61,10 @@ public class StructuredPlaceInfoBuilder {
         this.region = clean(region);
         return this;
     }
+
+    /**
+     * Either fully spelled out such as "Germany" or the ISO 3166 alpha-2 code such as "DE".
+     */
     @NotNull
     public StructuredPlaceInfoBuilder country(@Nullable String country) {
         if (this.country!=null) throw new IllegalStateException("Set already!");

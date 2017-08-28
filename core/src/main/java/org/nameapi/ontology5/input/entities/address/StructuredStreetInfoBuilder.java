@@ -5,6 +5,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Builder for a {@link StructuredStreetInfo}.
+ *
+ * <p>The setters throw {@link IllegalStateException} in case a variable has been set already. This is to
+ * make the developer aware of programming logic errors.</p>
+ *
+ * <p>The setters trim the string values, and empty strings are converted to <code>null</code>.</p>
+ *
  * @author Nicole Torres
  */
 public class StructuredStreetInfoBuilder {
