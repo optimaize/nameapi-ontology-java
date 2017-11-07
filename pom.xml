@@ -227,6 +227,12 @@
             <version>6.9.9</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.openclover</groupId>
+            <artifactId>clover</artifactId>
+            <version>4.2.0</version>
+        </dependency>
     </dependencies>
 
 
