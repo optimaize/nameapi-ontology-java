@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.address;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.nameapi.ontology5.util.ValueTransformer;
@@ -23,7 +24,8 @@ public class SingleStringStreetInfo extends BaseStreetInfo {
 
     @JsonCreator
     public SingleStringStreetInfo(
-            @JsonProperty("string") @NotNull String string) {
+            @JsonProperty("string") @JsonPropertyDescription("The street information where the whole street/house etc" +
+                    " information is in plaintext form in a single line and needs to be parsed to extract information.") @NotNull String string) {
         this.string = string;
     }
 

@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.address;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +32,7 @@ public class MultiLineAddress extends BasePlaintextAddress implements InputAddre
 
     @JsonCreator
     public MultiLineAddress(
-            @JsonProperty("addressLines") @NotNull List<String> addressLines) {
+            @JsonProperty("addressLines") @JsonPropertyDescription("The address information that appears in the form of text lines.") @NotNull List<String> addressLines) {
         if (addressLines.isEmpty()) throw new IllegalArgumentException("At least one line is required!");
         this.addressLines = ImmutableList.copyOf(addressLines);
     }

@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.address;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +38,7 @@ public class SingleStringAddress extends BasePlaintextAddress implements InputAd
      */
     @JsonCreator
     public SingleStringAddress(
-            @JsonProperty("string") @NotNull String string) {
+            @JsonProperty("string") @JsonPropertyDescription("The address information that appears in one single line.") @NotNull String string) {
         if (string.isEmpty()) throw new IllegalArgumentException("May not be empty!");
         if (string.contains("\n")) throw new IllegalArgumentException("Line breaks are not allowed!");
         this.string = string;

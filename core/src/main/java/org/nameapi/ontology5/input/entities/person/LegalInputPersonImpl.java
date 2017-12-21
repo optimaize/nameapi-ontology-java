@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.nameapi.ontology5.util.NameTransformer;
-import org.nameapi.ontology5.util.ValueTransformer;
-import org.nameapi.ontology5.util.ValueTransformerUtil;
 import org.nameapi.ontology5.input.entities.address.AddressRelation;
 import org.nameapi.ontology5.input.entities.contact.EmailAddress;
 import org.nameapi.ontology5.input.entities.contact.TelNumber;
 import org.nameapi.ontology5.input.entities.person.age.AgeInfo;
 import org.nameapi.ontology5.input.entities.person.name.InputPersonName;
+import org.nameapi.ontology5.util.NameTransformer;
+import org.nameapi.ontology5.util.ValueTransformer;
+import org.nameapi.ontology5.util.ValueTransformerUtil;
 
 import java.util.List;
 
@@ -113,4 +113,25 @@ public class LegalInputPersonImpl extends AbstractInputPerson implements LegalIn
         }
         return new LegalInputPersonImpl(Optional.fromNullable(modPersonName), age, correspondenceLanguage, addresses, telNumbers, emailAddresses);
     }
+
+    /**
+     * Not used, always throws!
+     *
+     * An actual implementation using Jackson could be:
+     * <pre>
+     *          ObjectMapper mapper = new ObjectMapper();
+     *          try {
+     *              return mapper.readValue(jsonRepresentation, InputWithEmail.class );
+     *          } catch (IOException e) {
+     *              throw new IllegalArgumentException("The json is not a valid representation of the object: \n" + jsonString);
+     *         }
+     * </pre>
+     *
+     * @throws UnsupportedOperationException This method is only here to comply with swagger server-side API requirements.
+     */
+    @NotNull
+    public static LegalInputPersonImpl fromString(@NotNull String jsonString) {
+        throw new UnsupportedOperationException("This method is only here to comply with swagger requirements.");
+    }
+
 }
