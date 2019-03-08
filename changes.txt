@@ -9,6 +9,8 @@ These changes don't affect existing APIs, the domain classes were not in use yet
 
 PersonNameMatchType.PARTIAL was added as new enum value.
 
+Renamed FakeRiskType.HUMEROUS to HUMOROUS (it was misspelled).
+
 
 
 

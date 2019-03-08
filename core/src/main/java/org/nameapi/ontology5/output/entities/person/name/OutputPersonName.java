@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- * All the names identified in an input person name.
+ * All the names and terms that occurred in an input person name.
  *
  * @author Nicole Torres
  */
