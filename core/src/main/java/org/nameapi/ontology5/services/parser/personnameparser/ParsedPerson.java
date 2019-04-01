@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.parser.personnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
 import org.nameapi.ontology5.output.entities.person.MailingPersonRole;
 import org.nameapi.ontology5.output.entities.person.PersonRole;
@@ -29,14 +30,16 @@ public class ParsedPerson {
 
     @JsonCreator
     public ParsedPerson(
-            @JsonProperty("personType") PersonType personType,
-            @JsonProperty("personRole") PersonRole personRole,
-            @JsonProperty("mailingPersonRoles") Set<MailingPersonRole> mailingPersonRoles,
-            @JsonProperty("gender") GenderizerResult gender,
-            @JsonProperty("addressingGivenName") String addressingGivenName,
-            @JsonProperty("addressingSurname") String addressingSurname,
-            @JsonProperty("outputPersonName") OutputPersonName outputPersonName,
-            @JsonProperty("people") List<ParsedPerson> people) {
+            @JsonProperty("personType") @JsonPropertyDescription("The type of person, it can be types of natural and legal people, and groups of them.\n See https://goo.gl/1iwt9p for the documentation of the PersonType enum values.") PersonType personType,
+            @JsonProperty("personRole") @JsonPropertyDescription("The role of the person. For example it can be the receiver, the owner or just a contact.\n See https://goo.gl/xVhJXh for the documentation of the PersonRole enum values.") PersonRole personRole,
+            @JsonProperty("mailingPersonRoles") @JsonPropertyDescription("The roles of a person within a mailing address. " +
+                    "It is of interest once not only a single, but multiple entities are mentioned." +
+                    "\nSee https://goo.gl/11XqE5 for the documentation of the MailingPersonRole enum values.") Set<MailingPersonRole> mailingPersonRoles,
+            @JsonProperty("gender") @JsonPropertyDescription("The result of the Genderizer containing the gender, optionally the male proportion and the confidence.") GenderizerResult gender,
+            @JsonProperty("addressingGivenName") @JsonPropertyDescription("The given name that may be used when addressing the person.") String addressingGivenName,
+            @JsonProperty("addressingSurname")  @JsonPropertyDescription("The surname that may be used when addressing the person.") String addressingSurname,
+            @JsonProperty("outputPersonName") @JsonPropertyDescription("All the names identified in an input person name.") OutputPersonName outputPersonName,
+            @JsonProperty("people") @JsonPropertyDescription("The list of people parsed from the input.") List<ParsedPerson> people) {
         this.personType = personType;
         this.personRole = personRole;
         this.mailingPersonRoles = mailingPersonRoles;

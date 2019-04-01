@@ -3,6 +3,7 @@ package org.nameapi.ontology5.services.parser.personnameparser;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.util.List;
 
@@ -16,7 +17,8 @@ public class PersonNameParserResult {
 
     @JsonCreator
     public PersonNameParserResult(
-            @JsonProperty("matches") List<ParsedPersonMatch> matches
+            @JsonProperty("matches") @JsonPropertyDescription("A list of possible ways how a person could be parsed.\n" +
+                    "The entries are sorted by likeliness & confidence, the first is the best parsing result.") List<ParsedPersonMatch> matches
     ) {
         if (matches.isEmpty()) throw new IllegalArgumentException("At least one match is required!");
         this.matches = matches;

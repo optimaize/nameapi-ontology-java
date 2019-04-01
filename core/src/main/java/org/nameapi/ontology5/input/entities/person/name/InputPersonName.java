@@ -2,6 +2,7 @@ package org.nameapi.ontology5.input.entities.person.name;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
@@ -31,7 +32,7 @@ public class InputPersonName {
      */
     @JsonCreator
     public InputPersonName(
-            @JsonProperty("nameFields") @NotNull List<NameField> nameFields
+            @JsonProperty("nameFields") @JsonPropertyDescription("A list of input fields for a name or name-related input, such as a given name.") @NotNull List<NameField> nameFields
     ) {
         this.nameFields = ImmutableList.copyOf(nameFields);
     }

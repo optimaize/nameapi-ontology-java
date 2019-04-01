@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.genderizer;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
@@ -29,9 +30,9 @@ public final class GenderizerResult {
 
     @JsonCreator
     public GenderizerResult(
-            @JsonProperty("gender") @NotNull ComputedPersonGender gender,
-            @JsonProperty("maleProportion") @NotNull Optional<Double> maleProportion,
-            @JsonProperty("confidence") double confidence
+            @JsonProperty("gender") @JsonPropertyDescription("The computed gender result. See https://goo.gl/LkJBZG for the documentation of the ComputedPersonGender enum values.") @NotNull ComputedPersonGender gender,
+            @JsonProperty("maleProportion") @JsonPropertyDescription("If the computed gender is neutral this may be specified (but does not have to be). A value 0-1, the remaining percentage is for the female gender.") @NotNull Optional<Double> maleProportion,
+            @JsonProperty("confidence") @JsonPropertyDescription("A value in the range 0-1 that indicates how sure the server is about the result. The higher the better.") double confidence
     ) {
         this.gender = gender;
         this.maleProportion = maleProportion;

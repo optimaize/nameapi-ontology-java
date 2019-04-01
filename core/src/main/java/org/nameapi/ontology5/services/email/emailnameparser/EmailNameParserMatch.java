@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.email.emailnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,9 +26,9 @@ public final class EmailNameParserMatch {
 
     @JsonCreator
     public EmailNameParserMatch(
-            @JsonProperty("givenNames") @NotNull List<NameFromEmailAddress> givenNames,
-            @JsonProperty("surnames") @NotNull List<NameFromEmailAddress> surnames,
-            @JsonProperty("confidence") double confidence
+            @JsonProperty("givenNames") @JsonPropertyDescription("The extracted given names from the email address.") @NotNull List<NameFromEmailAddress> givenNames,
+            @JsonProperty("surnames") @JsonPropertyDescription("The extracted surnames from the email address.") @NotNull List<NameFromEmailAddress> surnames,
+            @JsonProperty("confidence") @JsonPropertyDescription("A value in the range 0-1 that indicates how sure the server is about the result. The higher the better.") double confidence
     ) {
         this.givenNames = Collections.unmodifiableList(givenNames);
         this.surnames   = Collections.unmodifiableList(surnames);

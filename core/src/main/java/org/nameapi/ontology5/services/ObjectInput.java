@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.Nullable;
 import org.nameapi.ontology5.input.context.Context;
@@ -16,7 +17,7 @@ public abstract class ObjectInput {
 
     @JsonCreator
     public ObjectInput(
-            @JsonProperty("context") @Nullable Context context
+            @JsonProperty("context") @JsonPropertyDescription("The context defining the caller's environment for the execution.") @Nullable Context context
     ) {
         this.context = Optional.fromNullable(context);
     }

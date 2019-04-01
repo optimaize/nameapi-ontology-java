@@ -2,6 +2,7 @@ package org.nameapi.ontology5.output.entities.person.name;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -18,8 +19,8 @@ public class Term {
 
     @JsonCreator
     public Term(
-            @JsonProperty("string") @NotNull String string,
-            @JsonProperty("termType") @NotNull TermType termType
+            @JsonProperty("string") @JsonPropertyDescription("The string of the term.") @NotNull String string,
+            @JsonProperty("termType") @JsonPropertyDescription("The type of the term. See https://goo.gl/FtesDX for the documentation of the TermType enum values.") @NotNull TermType termType
     ) {
         this.string = string;
         this.termType = termType;

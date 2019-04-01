@@ -1,5 +1,7 @@
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.jetbrains.annotations.NotNull;
 import org.nameapi.ontology5.input.entities.address.PlaceInfo;
 
@@ -49,6 +51,15 @@ public enum PlaceMatchType {
 
     public static void assertSize(int expectedItems) {
         assert values().length == expectedItems : "Update the code calling PlaceMatchType with " + expectedItems + "!";
+    }
+
+    @JsonCreator
+    public static PlaceMatchType forValue(String value) {
+        return PlaceMatchType.valueOf(value.toUpperCase().trim());
+    }
+    @JsonValue
+    public String getName() {
+        return name();
     }
 
 }

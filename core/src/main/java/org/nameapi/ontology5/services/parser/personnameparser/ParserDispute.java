@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.parser.personnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 /**
  * A consistency problem detected by the parser is within this object.
@@ -17,8 +18,8 @@ public class ParserDispute {
 
     @JsonCreator
     public ParserDispute(
-            @JsonProperty("disputeType") DisputeType disputeType,
-            @JsonProperty("message") String message
+            @JsonProperty("disputeType") @JsonPropertyDescription("The type of consistency problem detected by the name parser. See https://goo.gl/Y4yNhc for the documentation of the DisputeType enum values.") DisputeType disputeType,
+            @JsonProperty("message") @JsonPropertyDescription("The explanation of the detected dispute.") String message
     ) {
         this.disputeType = disputeType;
         this.message = message;

@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.person.age;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
@@ -37,8 +38,8 @@ public class YearRange {
 
     @JsonCreator
     private YearRange(
-            @JsonProperty("startIncluding") @NotNull Optional<Integer> startIncluding,
-            @JsonProperty("endIncluding") @NotNull Optional<Integer> endIncluding
+            @JsonProperty("startIncluding") @JsonPropertyDescription("The start year, for example 1980. Absent if not known.") @NotNull Optional<Integer> startIncluding,
+            @JsonProperty("endIncluding") @JsonPropertyDescription("The end year, for example 1989. Absent if not known.") @NotNull Optional<Integer> endIncluding
     ) {
         if (startIncluding.isPresent() && startIncluding.get() < 0) {
             throw new IllegalArgumentException("Start is out of permitted range: "+startIncluding.get());

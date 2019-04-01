@@ -2,6 +2,7 @@ package org.nameapi.ontology5.output.entities.person.name;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
@@ -24,7 +25,7 @@ public class OutputPersonName {
 
     @JsonCreator
     public OutputPersonName(
-            @JsonProperty("terms") @NotNull List<Term> terms
+            @JsonProperty("terms") @JsonPropertyDescription("The list of extracted name related terms from the input person.") @NotNull List<Term> terms
     ) {
         this.terms = ImmutableList.copyOf(terms);
     }

@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.person.age;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
@@ -23,8 +24,8 @@ final class BirthYearRange implements AgeInfo {
 
     @JsonCreator
     public BirthYearRange(
-            @JsonProperty("yearStartIncl") @Nullable Integer yearStartIncl,
-            @JsonProperty("yearEndIncl") @Nullable Integer yearEndIncl) {
+            @JsonProperty("yearStartIncl") @JsonPropertyDescription("4-digit start year including")@Nullable Integer yearStartIncl,
+            @JsonProperty("yearEndIncl") @JsonPropertyDescription(("4-digit end year including")) @Nullable Integer yearEndIncl) {
         if (yearStartIncl!=null && (yearStartIncl < 0 || yearStartIncl > 2100)) {
             throw new IllegalArgumentException("Birth year range start not in legal range: "+yearStartIncl+"!");
         }

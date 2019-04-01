@@ -1,5 +1,7 @@
 package org.nameapi.ontology5.input.context;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * Tells whether someone (a human or a program) is waiting for the answer or not.
  *
@@ -31,6 +33,11 @@ public enum Priority {
      */
     public static void assertSize(int size) {
         assert values().length == size : "Update the code that calls this with outdated size "+size+"!";
+    }
+
+    @JsonCreator
+    public static Priority forValue(String value) {
+        return Priority.valueOf(value.toUpperCase().trim());
     }
 
 }

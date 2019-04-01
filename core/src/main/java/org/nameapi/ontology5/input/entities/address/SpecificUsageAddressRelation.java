@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.address;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,8 +27,8 @@ public class SpecificUsageAddressRelation implements AddressRelation {
 
     @JsonCreator
     public SpecificUsageAddressRelation(
-            @JsonProperty("address") @NotNull InputAddress address,
-            @JsonProperty("usage") @NotNull Set<AddressUsage> usage
+            @JsonProperty("address") @JsonPropertyDescription("Represents a physical address which can be an address to a house, a postbox, a \"packet pickup station\" etc.") @NotNull InputAddress address,
+            @JsonProperty("usage") @JsonPropertyDescription("Lists the possible purposes of an input address.\nSee https://goo.gl/uap11n for the documentation of the AddressUsage enum values. ") @NotNull Set<AddressUsage> usage
     ) {
         this.address = address;
         this.usage   = usage;

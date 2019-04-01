@@ -2,6 +2,7 @@ package org.nameapi.ontology5.input.entities.person.name;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,8 +30,8 @@ public class NameField {
     }
     @JsonCreator
     public NameField(
-            @JsonProperty("string") @NotNull String string,
-            @JsonProperty("fieldType") @NotNull String fieldType
+            @JsonProperty("string") @JsonPropertyDescription("The string on the input.") @NotNull String string,
+            @JsonProperty("fieldType") @JsonPropertyDescription("<p>The field type, a common interface for the enum values.</p>") @NotNull String fieldType
     ) {
         this.string = string;
         this.fieldType = FieldTypes.valueOf(fieldType);

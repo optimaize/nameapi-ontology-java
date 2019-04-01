@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.input.entities.address;
 
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.base.Optional;
@@ -31,6 +32,7 @@ public interface InputAddress {
      *         For example a specific implementation for a Canadian address should,
      *         if possible, return the data in Canadian formatting style.
      */
+    @JsonPropertyDescription("Returns the address information line by line.")
     @NotNull
     List<String> getAddressLines();
 
@@ -44,9 +46,10 @@ public interface InputAddress {
 
     /**
      * Information about the street name, street number, apartment/suite.
-     * @return <code>missing</code> If no street/house information is known at all, For example because it's a
+     * @return <code>missing</code> If no street/house information is known at all, for example because it's a
      *         {@link #getPobox postbox} address, or if it's a raw address.
      */
+    @JsonPropertyDescription("Information about the street name, street number, apartment/suite. Missing if no street/house information is known at all, for example because it's a postbox address, or if it's a raw address.")
     @NotNull
     Optional<StreetInfo> getStreetInfo();
 
@@ -58,6 +61,8 @@ public interface InputAddress {
      *
      * @return <code>missing</code> if it's not a postbox address, or if it's a raw address.
      */
+    @JsonPropertyDescription("Usually the post box number as it appears in the address. If the string is non-null then it's not empty, and contains either a number, or a string\n" +
+            "like \"postbox\", or both like \"Po box 2435\" etc.")
     @NotNull
     Optional<String> getPobox();
 
@@ -65,9 +70,9 @@ public interface InputAddress {
      * Information about the locality.
      * @return <code>missing</code> if it's a raw address.
      */
+    @JsonPropertyDescription("Information about the locality. Missing if it's a raw address.")
     @NotNull
     Optional<PlaceInfo> getPlaceInfo();
-
 
     @Nullable
     InputAddress transform(@NotNull ValueTransformer transformer);

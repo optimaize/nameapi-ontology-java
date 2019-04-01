@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.email.emailnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.nameapi.ontology5.cremalang.annotation.GeneratedCode;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
@@ -21,8 +22,8 @@ public class NameFromEmailAddress {
 
     @JsonCreator
     public NameFromEmailAddress(
-            @JsonProperty("name") @NotNull String name,
-            @JsonProperty("nameType") @NotNull EmailAddressNameType nameType
+            @JsonProperty("name") @JsonPropertyDescription("The name extracted from the email address.") @NotNull String name,
+            @JsonProperty("nameType") @JsonPropertyDescription("What kind of name string it is. See https://goo.gl/2UYPsJ for the documentation of the EmailAddressNameType enum values.") @NotNull EmailAddressNameType nameType
     ) {
         this.name = name;
         this.nameType = nameType;

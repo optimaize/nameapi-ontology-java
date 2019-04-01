@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.formatter;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -17,8 +18,9 @@ public class FormatterResult {
 
     @JsonCreator
     public FormatterResult(
-            @JsonProperty("formatted") @NotNull String formatted,
-            @JsonProperty("unknown") boolean unknown
+            @JsonProperty("formatted") @JsonPropertyDescription("The nicely formatted string, possibly the same as the input.") @NotNull String formatted,
+            @JsonProperty("unknown") @JsonPropertyDescription("If true then server didn't understand the input, but still tried to format it.\n" +
+                    "This feature must be enabled specifically in the input properties.") boolean unknown
     ) {
         this.formatted = formatted;
         this.unknown   = unknown;

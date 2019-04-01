@@ -3,6 +3,7 @@ package org.nameapi.ontology5.input.entities.address;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,7 +25,7 @@ public class UseForAllAddressRelation implements AddressRelation {
 
     @JsonCreator
     public UseForAllAddressRelation(
-            @JsonProperty("address") @NotNull InputAddress address
+            @JsonProperty("address") @JsonPropertyDescription("Represents a physical address which can be an address to a house, a postbox, a \"packet pickup station\" etc.") @NotNull InputAddress address
     ) {
         this.address = address;
     }

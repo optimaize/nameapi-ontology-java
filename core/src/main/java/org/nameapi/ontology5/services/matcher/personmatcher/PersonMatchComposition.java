@@ -1,6 +1,8 @@
 
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * Tells how much the two people have in common.
  *
@@ -66,4 +68,8 @@ public enum PersonMatchComposition {
         assert values().length == expectedItems : "Update the code calling this with " + expectedItems + "!";
     }
 
+    @JsonCreator
+    public static PersonMatchComposition forValue(String value) {
+        return PersonMatchComposition.valueOf(value.toUpperCase().trim());
+    }
 }

@@ -2,6 +2,7 @@ package org.nameapi.ontology5.services.parser.personnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.util.List;
 
@@ -18,10 +19,10 @@ public class ParsedPersonMatch {
 
     @JsonCreator
     public ParsedPersonMatch(
-            @JsonProperty("parsedPerson") ParsedPerson parsedPerson,
-            @JsonProperty("parserDisputes") List<ParserDispute> parserDisputes,
-            @JsonProperty("likeliness") double likeliness,
-            @JsonProperty("confidence") double confidence
+            @JsonProperty("parsedPerson") @JsonPropertyDescription("Information about the person: the computed gender, the addressing given name, the addressing surname...") ParsedPerson parsedPerson,
+            @JsonProperty("parserDisputes") @JsonPropertyDescription("A list of consistency problems detected by the parser is within this object.") List<ParserDispute> parserDisputes,
+            @JsonProperty("likeliness") @JsonPropertyDescription("A value in the range 0-1 that indicates how likely is it that this is the correct way of parsing. The higher the better.") double likeliness,
+            @JsonProperty("confidence") @JsonPropertyDescription("A value in the range 0-1 that indicates how sure the server is about the result. The higher the better.") double confidence
     ) {
         this.parsedPerson = parsedPerson;
         this.parserDisputes = parserDisputes;

@@ -19,7 +19,7 @@ public class InputWithEmail extends ObjectInput {
     @JsonCreator
     public InputWithEmail(
             @JsonProperty("context") @JsonPropertyDescription("The context defining the caller's environment for the execution.") @Nullable Context context,
-            @JsonProperty(value = "emailAddress", required = true) @NotNull String emailAddress
+            @JsonProperty(value = "emailAddress", required = true) @JsonPropertyDescription("The email address, for example \"test@example.com\".") @NotNull String emailAddress
     ) {
         super(context);
         this.emailAddress = emailAddress;

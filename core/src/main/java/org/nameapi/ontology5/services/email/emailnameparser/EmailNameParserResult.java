@@ -3,6 +3,7 @@ package org.nameapi.ontology5.services.email.emailnameparser;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
@@ -23,8 +24,8 @@ public class EmailNameParserResult {
 
     @JsonCreator
     public EmailNameParserResult(
-            @JsonProperty("resultType") @NotNull EmailAddressParsingResultType resultType,
-            @JsonProperty("nameMatches") @NotNull List<EmailNameParserMatch> nameMatches
+            @JsonProperty("resultType") @JsonPropertyDescription("Tells what was detected in the local-part (user name) of the email address.") @NotNull EmailAddressParsingResultType resultType,
+            @JsonProperty("nameMatches") @JsonPropertyDescription("A list of successful ways of parsing a name out of an email address.") @NotNull List<EmailNameParserMatch> nameMatches
     ) {
         this.resultType = resultType;
         this.nameMatches = Collections.unmodifiableList(nameMatches);

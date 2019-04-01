@@ -3,6 +3,7 @@ package org.nameapi.ontology5.services.riskdetector;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import org.jetbrains.annotations.NotNull;
@@ -23,8 +24,15 @@ public class RiskDetectorResult {
 
     @JsonCreator
     public RiskDetectorResult(
-            @JsonProperty("score") double score,
-            @JsonProperty("risks") @NotNull List<DetectedRisk> risks
+            @JsonProperty("score") @JsonPropertyDescription("<p>An overall score considering all the detected risks and all the positive attributes of the record.<p>" +
+                    "Range [-1,1] where:" +
+                    "<ul>" +
+                    "<li>[-1,0) means no risks were detected and the record looks good.</li>" +
+                    "<li>0 means no risks were detected, but also no positive attributes were found, the service can't tell for sure.</li>" +
+                    "<li>(0,1] means one or multiple  risks were detected.</li>" +
+                    "</ul>"
+            ) double score,
+            @JsonProperty("risks") @JsonPropertyDescription("A list of detected risks in the InputPerson data. The list can be empty.") @NotNull List<DetectedRisk> risks
     ) {
         if (score < -1 || score > 1) throw new IllegalArgumentException("Score was out of range: "+score);
         this.score = score;

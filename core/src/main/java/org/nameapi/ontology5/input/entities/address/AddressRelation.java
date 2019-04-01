@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.input.entities.address;
 
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.base.Optional;
@@ -24,18 +25,21 @@ public interface AddressRelation {
     /**
      * If the address is used for all purposes then {@link #getSpecificUsage} returns <code>null</code>.
      */
+    @JsonPropertyDescription("If the address is used for all purposes then #getSpecificUsage returns null.")
     boolean isUsageForAll();
 
     /**
      * Returns 1-n usages for that address unless {@link #isUsageForAll} returns <code>true</code>.
      * @return 1-n entries when isUsageForAll()=false, otherwise <code>null</code>.
      */
+    @JsonPropertyDescription("<p>Returns 1-n usages for that address or absent if #isUsageForAll returns true.</p>\nSee https://goo.gl/RXDiQF for the documentation of the AddressUsage enum values.")
     @NotNull
     Optional<Set<AddressUsage>> getSpecificUsage();
 
     /**
      * Returns the address for that relation.
      */
+    @JsonPropertyDescription("Returns the address for that relation.")
     @NotNull
     InputAddress getAddress();
 

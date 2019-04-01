@@ -31,8 +31,7 @@ public enum PersonMatchType {
     SIMILAR,
 
     /**
-     * This value is reserved and not in use yet.
-     * (example: same family, different person, living at same address in a single family home.)
+     * There is a family relation between the 2 people, for example father and son or husband and wife. They have the same family name.
      */
     RELATION,
 

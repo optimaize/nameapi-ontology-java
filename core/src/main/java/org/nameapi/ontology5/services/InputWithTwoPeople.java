@@ -22,8 +22,8 @@ public class InputWithTwoPeople extends ObjectInput {
     @JsonCreator
     public InputWithTwoPeople(
             @JsonProperty("context") @JsonPropertyDescription("The context defining the caller's environment for the execution.") @Nullable Context context,
-            @JsonProperty("inputPerson1") @NotNull InputPerson inputPerson1,
-            @JsonProperty("inputPerson2") @NotNull InputPerson inputPerson2
+            @JsonProperty("inputPerson1") @JsonPropertyDescription("The first natural or legal person as used in crm databases, online user databases etc.") @NotNull InputPerson inputPerson1,
+            @JsonProperty("inputPerson2") @JsonPropertyDescription("The second natural or legal person as used in crm databases, online user databases etc.") @NotNull InputPerson inputPerson2
     ) {
         super(context);
         this.inputPerson1 = inputPerson1;

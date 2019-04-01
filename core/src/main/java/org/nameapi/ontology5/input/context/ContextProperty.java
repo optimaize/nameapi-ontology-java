@@ -2,6 +2,7 @@ package org.nameapi.ontology5.input.context;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,8 +27,8 @@ public class ContextProperty {
 
     @JsonCreator
     public ContextProperty(
-            @JsonProperty("name") @NotNull String name,
-            @JsonProperty("value") @NotNull String value
+            @JsonProperty("name") @JsonPropertyDescription("The name of the property.") @NotNull String name,
+            @JsonProperty("value") @JsonPropertyDescription("The value of the property.") @NotNull String value
     ) {
         this.name = name;
         this.value = value;

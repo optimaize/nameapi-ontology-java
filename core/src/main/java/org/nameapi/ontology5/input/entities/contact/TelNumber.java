@@ -1,6 +1,7 @@
 package org.nameapi.ontology5.input.entities.contact;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
@@ -53,6 +54,13 @@ public interface TelNumber {
      * @return Not empty. The term "number" may be stretched here. It may contain spaces and punctuation, and
      *         also letters as substitutes for numbers.
      */
+    @JsonPropertyDescription("<p>Returns the complete number in any format. This is the minimal required api for all implementations.</p>\n" +
+            "<p>Implementations may provide additional getters for information such as:\n" +
+            "     * <ul>\n" +
+            "     *   <li>type of number (phone, fax, mobile, fixed, ...)</li>\n" +
+            "     *   <li>separate country code, area code and number</li>\n" +
+            "     * </ul>" +
+            "</p>")
     @NotNull
     String getFullNumber();
 

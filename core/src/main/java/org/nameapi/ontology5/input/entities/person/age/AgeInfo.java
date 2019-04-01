@@ -1,5 +1,6 @@
 package org.nameapi.ontology5.input.entities.person.age;
 
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.google.common.base.Optional;
@@ -36,18 +37,21 @@ public interface AgeInfo {
      * This may either be known as such, or be extracted out of a birth date.
      * @return 4 digits, for example 1986
      */
+    @JsonPropertyDescription("This may either be known as such, or be extracted out of a birth date. 4 digits, for example 1986.")
     @NotNull
     Optional<Integer> getYear();
 
     /**
      * @return 1-12
      */
+    @JsonPropertyDescription("1-2-digit month from 1-12")
     @NotNull
     Optional<Integer> getMonth();
 
     /**
      * @return 1-31
      */
+    @JsonPropertyDescription("1-2-digit day from 1-31")
     @NotNull
     Optional<Integer> getDay();
 
@@ -55,12 +59,14 @@ public interface AgeInfo {
     /**
      * This may either be known as such, or be extracted out of another value such as a birth date.
      */
+    @JsonPropertyDescription("This may either be known as such, or be extracted out of another value such as a birth date.")
     @NotNull
     YearRange getYearRange();
 
     /**
      * Tells if the object contains no data at all.
      */
+    @JsonPropertyDescription("Tells if the object contains no data at all.")
     boolean isEmpty();
 
     @Nullable

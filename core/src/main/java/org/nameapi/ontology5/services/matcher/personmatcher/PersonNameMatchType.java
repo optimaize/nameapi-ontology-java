@@ -1,6 +1,8 @@
 
 package org.nameapi.ontology5.services.matcher.personmatcher;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * The overall match type of how the names of one person match vs the names of another person.
  *
@@ -170,6 +172,11 @@ public enum PersonNameMatchType {
 
     public static void assertSize(int size) {
         assert values().length==size : "Update the code calling PersonNameMatchType.assertSize() with outdated "+size+" instead of "+values().length+"!";
+    }
+
+    @JsonCreator
+    public static PersonNameMatchType forValue(String value) {
+        return PersonNameMatchType.valueOf(value.toUpperCase().trim());
     }
 
 }
