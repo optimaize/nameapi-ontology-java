@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu May 27 13:22:51 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622121771764
+https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact org.testng\:testng\:pom\:6.9.9 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/org/testng/testng/6.9.9/testng-6.9.9.pom 409 Conflict
+https\://repo.maven.apache.org/maven2/.lastUpdated=1622121771781
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622121771752
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=

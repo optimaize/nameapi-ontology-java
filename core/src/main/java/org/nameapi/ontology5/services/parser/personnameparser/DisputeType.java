@@ -30,6 +30,17 @@ public enum DisputeType {
      * The duplicate values were ignored.
      */
     DUPLICATE_CONTENT,
+
+    /**
+     * When a term is interpreted as something, but it would be much more likely to have another meaning.
+     * Example: "Theodor" interpreted as surname.
+     */
+    TERM_INTERPRETATION,
+
+    /**
+     * When the string is syntactically broken and needs a fix, eg comma or dot in the wrong place, spacing errors.
+     */
+    SYNTAX,
     ;
 
     public static void assertSize(int size) {
