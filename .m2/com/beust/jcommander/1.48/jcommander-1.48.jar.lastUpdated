@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu May 27 13:22:57 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622121777654
+#Thu May 27 13:42:47 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622122967869
 https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact com.beust\:jcommander\:jar\:1.48 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/com/beust/jcommander/1.48/jcommander-1.48.jar 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1622121777727
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622121777621
+https\://repo.maven.apache.org/maven2/.lastUpdated=1622122967943
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622122967837
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=
