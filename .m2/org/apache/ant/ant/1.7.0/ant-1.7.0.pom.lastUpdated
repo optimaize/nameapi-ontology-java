@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu May 27 13:42:42 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622122962400
+#Mon May 31 13:15:57 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622466957163
 https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact org.apache.ant\:ant\:pom\:1.7.0 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/org/apache/ant/ant/1.7.0/ant-1.7.0.pom 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1622122962417
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622122962388
+https\://repo.maven.apache.org/maven2/.lastUpdated=1622466957181
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622466957146
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=

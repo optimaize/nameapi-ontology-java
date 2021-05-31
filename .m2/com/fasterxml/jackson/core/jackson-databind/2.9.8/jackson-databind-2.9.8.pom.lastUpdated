@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu May 27 13:42:52 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622122972561
+#Mon May 31 13:16:11 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622466971656
 https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact com.fasterxml.jackson.core\:jackson-databind\:pom\:2.9.8 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.pom 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1622122972574
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622122972545
+https\://repo.maven.apache.org/maven2/.lastUpdated=1622466971670
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622466971640
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=
