@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon May 31 13:16:12 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622466971999
+#Tue Jul 06 14:42:01 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1625582521669
 https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact com.fasterxml\:oss-parent\:pom\:16 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/com/fasterxml/oss-parent/16/oss-parent-16.pom 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1622466972019
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622466971986
+https\://repo.maven.apache.org/maven2/.lastUpdated=1625582521683
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1625582521655
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=

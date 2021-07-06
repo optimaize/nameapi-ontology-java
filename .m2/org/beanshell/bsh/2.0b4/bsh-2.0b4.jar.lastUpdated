@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon May 31 13:16:03 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1622466963269
+#Tue Jul 06 14:41:53 GMT 2021
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1625582513482
 https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact org.beanshell\:bsh\:jar\:2.0b4 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1622466963374
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1622466963173
+https\://repo.maven.apache.org/maven2/.lastUpdated=1625582513641
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1625582513377
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=
