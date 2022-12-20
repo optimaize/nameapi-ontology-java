@@ -55,7 +55,7 @@ final class BirthDate implements AgeInfo {
             @JsonProperty("month") @JsonPropertyDescription("1-2-digit month from 1-12") int month,
             @JsonProperty("day") @JsonPropertyDescription("1-2-digit day from 1-31") int day
     ) {
-        if (year<1  || year>2100) throw new IllegalArgumentException("Year is out of legal range: "+year+"!");
+        AgeUtil.checkYear(year);
         if (month<1 || month>12)  throw new IllegalArgumentException("Month must be 1-12 but was: "+month+"!");
         if (day<1   || day>31)    throw new IllegalArgumentException("Day must be 1-31 but was: "+day+"!");
         //noinspection deprecation

@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Jul 06 14:41:53 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1625582513481
-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact junit\:junit\:jar\:4.10 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/junit/junit/4.10/junit-4.10.jar 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1625582513638
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1625582513376
+#Tue Dec 20 08:40:01 UTC 2022
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1671525601024
+https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact junit\:junit\:jar\:4.10 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/junit/junit/4.10/junit-4.10.jar, status\: 409 Conflict
+https\://repo.maven.apache.org/maven2/.lastUpdated=1671525601125
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1671525601010
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=

@@ -41,11 +41,11 @@ public class YearRange {
             @JsonProperty("startIncluding") @JsonPropertyDescription("The start year, for example 1980. Absent if not known.") @NotNull Optional<Integer> startIncluding,
             @JsonProperty("endIncluding") @JsonPropertyDescription("The end year, for example 1989. Absent if not known.") @NotNull Optional<Integer> endIncluding
     ) {
-        if (startIncluding.isPresent() && startIncluding.get() < 0) {
-            throw new IllegalArgumentException("Start is out of permitted range: "+startIncluding.get());
+        if (startIncluding.isPresent()) {
+            AgeUtil.checkYear(startIncluding.get());
         }
-        if (endIncluding.isPresent() && endIncluding.get() > 2100) {
-            throw new IllegalArgumentException("End is out of permitted range: "+endIncluding.get());
+        if (endIncluding.isPresent()) {
+            AgeUtil.checkYear(endIncluding.get());
         }
         if (startIncluding.isPresent() && endIncluding.isPresent() && (startIncluding.get() > endIncluding.get())) {
             throw new IllegalArgumentException("End cannot be smaller than start: "+startIncluding.get()+"/"+endIncluding.get());

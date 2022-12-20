@@ -26,11 +26,11 @@ final class BirthYearRange implements AgeInfo {
     public BirthYearRange(
             @JsonProperty("yearStartIncl") @JsonPropertyDescription("4-digit start year including")@Nullable Integer yearStartIncl,
             @JsonProperty("yearEndIncl") @JsonPropertyDescription(("4-digit end year including")) @Nullable Integer yearEndIncl) {
-        if (yearStartIncl!=null && (yearStartIncl < 0 || yearStartIncl > 2100)) {
-            throw new IllegalArgumentException("Birth year range start not in legal range: "+yearStartIncl+"!");
+        if (yearStartIncl!=null) {
+            AgeUtil.checkYear(yearStartIncl);
         }
-        if (yearEndIncl!=null && (yearEndIncl < 0 || yearEndIncl > 2100)) {
-            throw new IllegalArgumentException("Birth year range end not in legal range: "+yearEndIncl+"!");
+        if (yearEndIncl!=null) {
+            AgeUtil.checkYear(yearEndIncl);
         }
         if (yearStartIncl!=null && yearEndIncl!=null) {
             if (yearStartIncl > yearEndIncl) {

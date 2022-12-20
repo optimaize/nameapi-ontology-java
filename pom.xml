@@ -6,7 +6,7 @@
     <groupId>org.nameapi.ontology</groupId>
     <artifactId>nameapi-ontology5</artifactId>
     <name>nameapi-ontology5</name>
-    <version>5.3.4</version>
+    <version>5.4.0</version>
     <packaging>pom</packaging>
 
     <url>http://www.nameapi.org</url>
@@ -58,24 +58,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <jackson.version>2.9.8</jackson.version>
+        <slf4j.version>1.7.22</slf4j.version>
 
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
 
-        <repo-base-url>https://artif4ctory.optimaize.com</repo-base-url>
+        <repo-base-url>https://repo1.maven.org</repo-base-url>
     </properties>
 
     <repositories>
         <repository>
             <id>optimaize-release</id>
-            <url>${repo-base-url}/artifactory/libs-release-local</url>
+            <url>${repo-base-url}/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
         <repository>
             <id>optimaize-snapshot</id>
-            <url>${repo-base-url}/artifactory/libs-snapshot-local</url>
+            <url>${repo-base-url}/maven2</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -280,6 +281,12 @@
             <artifactId>guava</artifactId>
             <!-- updated on 2016-03-18. -->
             <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>

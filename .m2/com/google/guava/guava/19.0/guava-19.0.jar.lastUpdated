@@ -1,7 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Jul 06 14:41:45 GMT 2021
-6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1625582505352
-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact com.google.guava\:guava\:jar\:19.0 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: Transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/com/google/guava/guava/19.0/guava-19.0.jar 409 Conflict
-https\://repo.maven.apache.org/maven2/.lastUpdated=1625582505532
-https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1625582505325
+#Tue Dec 20 08:39:55 UTC 2022
+6f844d35c7cd2f99aae9f451a604405fbd428f1e@default-optimaize-snapshot-https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.lastUpdated=1671525595929
+https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/.error=Could not transfer artifact com.google.guava\:guava\:jar\:19.0 from/to optimaize-snapshot (https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local)\: transfer failed for https\://artif4ctory.optimaize.com/artifactory/libs-snapshot-local/com/google/guava/guava/19.0/guava-19.0.jar, status\: 409 Conflict
+https\://repo.maven.apache.org/maven2/.lastUpdated=1671525595972
+https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.lastUpdated=1671525595921
 https\://artif4ctory.optimaize.com/artifactory/libs-release-local/.error=

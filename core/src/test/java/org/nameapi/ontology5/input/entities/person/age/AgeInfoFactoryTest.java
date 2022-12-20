@@ -129,7 +129,6 @@ public class AgeInfoFactoryTest {
     private static int getCurrentYear() {
         int year = Calendar.getInstance().get(Calendar.YEAR);
         assertTrue(year>=2013);
-        assertTrue(year<=2100);
         return year;
     }
 }

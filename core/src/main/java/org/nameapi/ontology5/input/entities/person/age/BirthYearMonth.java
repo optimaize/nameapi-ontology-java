@@ -40,7 +40,7 @@ final class BirthYearMonth implements AgeInfo {
             @JsonProperty("year") @JsonPropertyDescription("4-digit year")  int year,
             @JsonProperty("month") @JsonPropertyDescription("1-2-digit month from 1-12") int month
     ) {
-        if (year<0  || year>2100) throw new IllegalArgumentException("Year is out of legal range: "+year+"!");
+        AgeUtil.checkYear(year);
         if (month<1 || month>12)  throw new IllegalArgumentException("Month must be 1-12 but was: "+month+"!");
         this.year  = year;
         this.month = month;

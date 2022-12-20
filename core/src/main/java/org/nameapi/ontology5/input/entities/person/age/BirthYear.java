@@ -24,9 +24,7 @@ final class BirthYear implements AgeInfo {
     public BirthYear(
             @JsonProperty("year") int year
     ) {
-        if (year < 0 || year > 2100) {
-            throw new IllegalArgumentException("Birth year not in legal range 0-2100: "+year+"!");
-        }
+        AgeUtil.checkYear(year);
         this.year = year;
     }
 
