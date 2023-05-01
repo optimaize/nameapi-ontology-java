@@ -41,10 +41,30 @@ public enum DisputeType {
      * When the string is syntactically broken and needs a fix, eg comma or dot in the wrong place, spacing errors.
      */
     SYNTAX,
+
+    /**
+     * A term that is used for multiple things.
+     * <p>
+     * Example: gn="Francois Martin", sn="Martin"
+     * The word "Martin" appears twice in the input. If it is used in the interpretation as both the
+     * 2nd given name, and the surname, then we have a DUPLICATE_USE. If instead one on the occurrences is
+     * ignored then there will be a {@link #DUPLICATE_CONTENT} dispute.
+     * <p>
+     * The use is per person. That is: "Peter and Maria Meyer" are 2 people, both are called Meyer, and
+     * we do not have a duplicate term here.
+     * <p>
+     * Note: this javadoc was copied from {@code NameParserDispute#DisputeType} of 'onoserver' software.
+     */
+    DUPLICATE_USE,
+
     ;
 
+    @SuppressWarnings("squid:S4274") // assert keyword
     public static void assertSize(int size) {
-        assert values().length==size : "Update the code calling DisputeType.assertSize() with outdated "+size+" instead of "+values().length+"!";
+        int valuesCount = values().length;
+        assert valuesCount == size :
+                "Update the code calling DisputeType.assertSize() with outdated " + size +
+                        " instead of " + valuesCount + "!";
     }
 
 }
