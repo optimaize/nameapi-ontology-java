@@ -293,7 +293,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <!-- updated on 2015-11-04. -->
-            <version>6.9.9</version>
+            <version>7.7.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
