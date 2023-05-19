@@ -1,12 +1,11 @@
 package org.nameapi.ontology5.services.email.emailnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.google.common.base.Optional;
-import org.nameapi.ontology5.cremalang.annotation.Immutable;
 import org.jetbrains.annotations.NotNull;
+import org.nameapi.ontology5.cremalang.annotation.Immutable;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,7 +36,6 @@ public class EmailNameParserResult {
         return resultType;
     }
 
-    @JsonIgnore
     @NotNull
     public Optional<EmailNameParserMatch> getBestNameMatch() {
         if (nameMatches.isEmpty()) return Optional.absent();

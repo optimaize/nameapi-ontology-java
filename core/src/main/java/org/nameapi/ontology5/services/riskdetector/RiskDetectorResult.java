@@ -60,7 +60,7 @@ public class RiskDetectorResult {
     /**
      * @return The risk with the highest score, if any.
      */
-    @NotNull @JsonIgnore
+    @NotNull
     public Optional<DetectedRisk> getWorstRisk() {
         if (risks.isEmpty()) return Optional.absent();
         return Optional.of(risks.get(0));

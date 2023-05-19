@@ -1,7 +1,6 @@
 package org.nameapi.ontology5.services.parser.personnameparser;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
@@ -31,7 +30,6 @@ public class PersonNameParserResult {
         return matches;
     }
 
-    @JsonIgnore
     public ParsedPersonMatch getBestMatch() {
         return matches.get(0);
     }
